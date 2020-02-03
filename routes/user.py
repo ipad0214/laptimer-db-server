@@ -2,6 +2,7 @@ import simplejson
 
 from flask import Blueprint, request
 from entities.user import User
+from entities.car import Car
 from datetime import datetime
 
 
