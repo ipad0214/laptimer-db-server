@@ -13,7 +13,7 @@ class User(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String)
-    favorite_car = Column(Integer)
+    favorite_car = Column(Integer, ForeignKey(Car.id))
 
 
     @property

@@ -25,7 +25,9 @@ def user_routing(session):
         return get_all_entrys()
 
     def get_all_entrys():
-        return simplejson.dumps([user.serialize for user in session.query(User)], indent=2)
+        query = session.query(User.id, User.name, Car.name, Car.img).join(Car, Car.id == User.favorite_car)
+        test = query.all()
+        return test
 
     def create_time_stamp():
         return datetime.now()
