@@ -9,7 +9,7 @@ class Car(Base):
     __tablename__ = 'tb_cars'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String)
+    car_name = Column(String)
     img = Column(String)
 
 
@@ -17,6 +17,6 @@ class Car(Base):
     def serialize(self):
         return {
             'id': self.id,
-            'name': self.name,
+            'name': self.car_name,
             'img': self.img
         }

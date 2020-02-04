@@ -25,9 +25,9 @@ def user_routing(session):
         return get_all_entrys()
 
     def get_all_entrys():
-        query = session.query(User.id, User.name, Car.name, Car.img).join(Car, Car.id == User.favorite_car)
-        test = query.all()
-        return test
+        User.name.label("user_name")
+        result = session.query(User.name, Car.car_name, Car.img).join(Car, Car.id == User.favorite_car).all()
+        return simplejson.dumps(result, indent=2)
 
     def create_time_stamp():
         return datetime.now()

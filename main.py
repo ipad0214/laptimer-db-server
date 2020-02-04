@@ -8,9 +8,9 @@ from sqlalchemy import MetaData
 from sqlalchemy.orm import sessionmaker
 
 db_local_string = "postgresql+psycopg2://postgres:postgres@localhost:5432/laptimer"
-db_pi_string = "postgresql+psycopg2://xx:xxxx@192.168.2.143:5432/weatherstation"
+db_string_remote = "postgresql+psycopg2://devcookie:weatherstation@192.168.2.168:32768/laptimer"
 
-db_string = db_local_string
+db_string = db_string_remote
 db = create_engine(db_string)
 Session = sessionmaker(bind=db)
 session = Session()
