@@ -28,7 +28,7 @@ def user_routing(session):
         User.name.label("user_name")
         result = session.query(User.name, Car.car_name, Car.img).join(Car, Car.id == User.favorite_car).all()
         return simplejson.dumps(result, indent=2)
-
+        
     def create_time_stamp():
         return datetime.now()
 

@@ -10,7 +10,7 @@ from sqlalchemy.orm import sessionmaker
 db_local_string = "postgresql+psycopg2://postgres:postgres@localhost:5432/laptimer"
 db_string_remote = "postgresql+psycopg2://devcookie:weatherstation@192.168.2.168:32768/laptimer"
 
-db_string = db_string_remote
+db_string = db_local_string
 db = create_engine(db_string)
 Session = sessionmaker(bind=db)
 session = Session()

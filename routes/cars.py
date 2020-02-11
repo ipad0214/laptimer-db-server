@@ -16,6 +16,9 @@ def car_routing(session):
         new_user = User(
             name=request.json["name"],
             img=request.json["img"],
+            accelration=request.json["accelration"],
+            speed=request.json["speed"],
+            drift=request.json["drift"]
         )
         session.add(new_user)
         session.commit()
